@@ -23,7 +23,6 @@ app.use(express.json());
 
 app.get('/sign-uploaded-images', (req, res) => {
     try {
-        console.log("Request received: ", Date.now());
         const apiSecret = process.env.CLOUDINARY_API_KEY;
         const timestamp = Math.round((new Date).getTime() / 1000);
         const signature = cloudinary.utils.api_sign_request({
@@ -39,6 +38,4 @@ app.get('/sign-uploaded-images', (req, res) => {
     }
 })
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server started on port ${process.env.PORT}.`);
-})
+app.listen(process.env.PORT, () => { })
