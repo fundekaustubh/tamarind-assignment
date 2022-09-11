@@ -1,6 +1,32 @@
+:root {
+  --bg-color: #282c34; 
+  --bg-gradient-first-color: #6a4087;
+  --bg-gradient-second-color: #503066;
+  --bg-gradient-third-color: #311d3f;
+  --bg-gradient-fourth-color: #271638;
+  --header-content-color: #fff;
+}
+
 .App {
   text-align: center;
+  min-height: 100vh;
+	background: linear-gradient(-45deg, var(--bg-gradient-first-color), var(--bg-gradient-second-color), var(--bg-gradient-third-color), var(--bg-gradient-fourth-color));
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -14,14 +40,36 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+}
+
+#header-content {
+  color: var(--header-content-color);
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3s steps(30, end),
+    blink-caret .4s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
 }
 
 .App-link {

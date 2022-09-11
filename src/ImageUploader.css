@@ -1,0 +1,44 @@
+.fade-animation {
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    -moz-animation-name: fadeIn;
+    -webkit-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    -ms-animation-name: fadeIn;
+}
+
+.container {
+  background-color: #121212;
+  border-radius: 2rem;
+  border: 0.2rem dashed red;
+}
+
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+    display: none;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; display:none }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; display:none }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; display:none }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
