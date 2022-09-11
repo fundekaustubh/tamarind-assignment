@@ -8,7 +8,7 @@ const App = () => {
     <>
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<Upload />} />
+        <Route path="*" element={<Upload />} />
       </Routes>
     </>
   );

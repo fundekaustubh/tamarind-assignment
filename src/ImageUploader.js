@@ -2,13 +2,11 @@ import React, { useState } from 'react'
 import './ImageUploader.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const ImageUploader = (props) => {
+const ImageUploader = () => {
     const options = {
-        uploadPreset: 'ml_default',
+        uploadPreset: 'tamarind_preset',
         cloudName: process.env.REACT_APP_CLOUDINARY_CLOUD_NAME,
         apiKey: process.env.REACT_APP_CLOUDINARY_API_KEY,
-        uploadSignatureTimestamp: props.timestamp,
-        uploadSignature: props.signature,
         cropping: false,
         folder: 'tamarind_uploads'
     }

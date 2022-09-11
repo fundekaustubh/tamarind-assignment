@@ -1,10 +1,8 @@
 import React from 'react';
 import ImageUploader from './ImageUploader';
-import useFetch from './useFetch';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 const Upload = () => {
-    const { data, isPending, error } = useFetch(`${process.env.REACT_APP_BACKEND_URL}/sign-uploaded-images`);
     return (
         <>
             <div className="App grid grid-rows-3 place-items-center">
@@ -13,7 +11,7 @@ const Upload = () => {
                         Welcome to Tamarind!
                     </p>
                 </header>
-                {data && <ImageUploader data={data} />}
+                <ImageUploader />
                 <ToastContainer />
             </div>
         </>
